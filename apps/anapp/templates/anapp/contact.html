@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}
+	Contact Form [FBV]
+{% endblock %}
+
+{% block content %}
+<div class="container">
+   <div class="jumbotron">
+      <h1 class="text-center display-4">Contact Form[FBV]</h1>
+      <p class="lead text-center">This is sample example for integration of AJAX with Django</p>
+    </div>
+    <div class="row justify-content-center align-items-center">
+      <div class="col-sm-6">
+      	<form id="contactForm" method="POST">
+			{% csrf_token %}
+      		{{ form.as_p }}
+      		<input type="submit" name="contact-submit" class="btn btn-primary" />
+      	</form>
+      </div>
+   </div>
+</div>
+{% endblock %}
